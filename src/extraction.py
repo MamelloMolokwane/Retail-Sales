@@ -1,6 +1,6 @@
 import pandas as pd
 
-def extract(filename: str, delimiter: str=";") -> pd.DataFrame:
+def extract(filename: str, delimiter: str=",") -> pd.DataFrame:
     """
     Extracts data from file and returns the data into a structured pandas DataFrame
 

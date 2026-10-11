@@ -3,13 +3,13 @@ import pandas as pd
 
 def transform(dataframe: pd.DataFrame):
     """
-    Clean data by dropping unneeded coloumns, renaming coloumns and parsing dates then saving the cleaned data to data/processed/
+    Clean data by dropping unneeded coloumns, renaming coloumns and parsing dates
 
     Args:
         dataframe (pd.DataFame): pandas DataFrame
 
     Returns:
-        Returns Nothing
+        df (pd.DataFrame)
     """
 
     # Drop unneeded coloumns from the DataFrame
@@ -32,10 +32,7 @@ def transform(dataframe: pd.DataFrame):
     # Parse dates to DateTime object and maintain consistency
     df = date_parsing(df_with_dropped_coloumns)
 
-    # Create the output filename from the first column's name which should be the id column for the table.
-    # For example, "customer_id" becomes "customers.csv".
-    csv_name = df.columns[0].split("_")[0]
-    df.to_csv(f"./data/processed/{csv_name}s.csv", index=False)
+    return df
 
     
 

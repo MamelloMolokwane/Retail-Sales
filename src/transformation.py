@@ -59,16 +59,13 @@ def date_parsing(df: pd.DataFrame) -> pd.DataFrame:
     date_columns = [
         "opening_date",
         "signup_date",
-        "hire_date"
+        "hire_date",
+        "order_datetime"
     ]
 
     # Restructure dates to consiste format.
     for coloumn in date_columns:
         if coloumn in df.columns:
             df[coloumn] = pd.to_datetime(df[coloumn])
-
-    # Edit "order_datetime" separtely as it includes the time
-    if "order_datetime" in df.columns:
-        df["order_datetime"] = pd.to_datetime(df["order_datetime"])
 
     return df

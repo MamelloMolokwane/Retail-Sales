@@ -1,6 +1,6 @@
 import pandas as pd
 
-# Remember to set the "..._id" from each DataFrame into a primary key.
+# Remember to set the "..._id" from each DataFrame into a primary key. If saving to SQL
 
 def load(df: pd.DataFrame):
     """

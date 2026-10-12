@@ -4,6 +4,20 @@ from loading import load
 import pandas as pd
 
 def pipeline():
+    """
+    Runs the ETL pipeline for the RYStore dataset.
+
+    Extracts raw data from the customers, employees, orders, products,
+    stores, and suppliers CSV files. Transforms each dataset by cleaning
+    and preparing the data, then loads the cleaned DataFrames into the
+    processed data directory.
+
+    Returns:
+    None: The function saves the processed datasets through the
+    load() function and does not return a value.
+
+    """
+
     # Define file locations
     customers_raw = "./data/raw/customers.csv"
     employees_raw = "./data/raw/employees.csv"
@@ -29,12 +43,12 @@ def pipeline():
     suppliers_df = transform(suppliers)
 
     # Load the cleaned data
-    load(customers_df)
-    load(employees_df)
-    load(orders_df)
-    load(products_df)
-    load(stores_df)
-    load(suppliers_df)
+    load(customers_df, employees_df, orders_df, products_df, stores_df, suppliers_df)
+    # load(employees_df)
+    # load(orders_df)
+    # load(products_df)
+    # load(stores_df)
+    # load(suppliers_df)
 
 if __name__ == "__main__":
     pipeline()

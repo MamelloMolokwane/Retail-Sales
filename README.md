@@ -49,7 +49,7 @@ rystore-etl-pipeline/
 │   │   └── suppliers.csv
 │   └── processed/
 ├── database/
-│   └── rystore.db
+│   └── retail_store.db
 ├── src/
 │   ├── __init__.py
 │   ├── extract.py         # CSV reading and initial schema validation
